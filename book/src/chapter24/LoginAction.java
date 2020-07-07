@@ -14,17 +14,17 @@ public class LoginAction extends Action {
 			) throws Exception {
 		HttpSession session = request.getSession();
 
-
 		String login = request.getParameter("login");
 		String password = request.getParameter("password");
+		String error = request.getParameter("error");
 		CustomerDAO dao = new CustomerDAO();
-		Customer customer = dao.search(login, password);
+		Customer customer = dao.search(login, password, error);
 
 		if (customer != null) {
-		session.setAttribute("customer", customer);
-		return "login-out.jsp";
-	}
-		return "login-error.jsp";
-
+			session.setAttribute("customer", customer);
+			return "login-out.jsp";
+		}
+			session.setAttribute("error", error);
+		return "login-in.jsp";
 	}
 }
