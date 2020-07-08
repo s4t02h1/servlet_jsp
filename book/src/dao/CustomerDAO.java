@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import bean.Customer;
 
 public class CustomerDAO extends DAO {
-	public Customer search(String login, String password, String error)
+	public Customer search(String login, String password)
 		throws Exception {
 		Customer customer = null;
 
@@ -18,7 +18,6 @@ public class CustomerDAO extends DAO {
 				"select * from customer where login = ? and password = ?");
 		st.setString(1, login);
 		st.setString(2, password);
-		st.setString(3, error);
 		ResultSet rs = st.executeQuery();
 
 		while (rs.next()) {

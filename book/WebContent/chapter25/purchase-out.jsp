@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@include file="../header.html" %>
-<%@include file = "../chapter25/menu.jsp" %>
+<%@include file = "menu.jsp" %>
 
-こんにちは、${customer.login}さん。
+購入手続きが完了しました。
 
 <%@include file="../footer.html" %>

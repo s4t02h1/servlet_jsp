@@ -18,7 +18,7 @@ public class LoginAction extends Action {
 		String password = request.getParameter("password");
 		String error = request.getParameter("error");
 		CustomerDAO dao = new CustomerDAO();
-		Customer customer = dao.search(login, password, error);
+		Customer customer = dao.search(login, password);
 
 		if (customer != null) {
 			session.setAttribute("customer", customer);
