@@ -661,8 +661,9 @@
 								</tr>
 							</tbody>
 						</table>
-
+						</form>
 					</div>
+
 					<div class="modal-footer" style="position: relative;" id="modal-footer-sendmail">
 						<!--  <button type="button" class="btn btn-primary" id="btnSendmailOk">追加</button>-->
 						<input type="submit"  class="btn btn-primary" value="追加">
