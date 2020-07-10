@@ -4,19 +4,19 @@ import java.io.Serializable;
 
 public class Item implements Serializable {
 
-	private Product product;
+	private Book book;
 	private int count;
 
-	public Product getProduct() {
-		return product;
+	public Book getProduct() {
+		return book;
 	}
 
 	public int getCount() {
 		return count;
 	}
 
-	public void setProduct(Product product) {
-		this.product = product;
+	public void setProduct(Book book) {
+		this.book = book;
 	}
 
 	public void setCount(int count) {

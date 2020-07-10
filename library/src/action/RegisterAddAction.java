@@ -8,9 +8,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import bean.Item;
-import bean.Product;
+import bean.Book;
 
-public class CartAddAction extends Action {
+public class RegisterAddAction extends Action {
 
 	@SuppressWarnings("unchecked")
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -32,8 +32,8 @@ public class CartAddAction extends Action {
 			}
 		}
 
-		List<Product> list = (List<Product>)session.getAttribute("list");
-		for (Product p : list) {
+		List<Book> list = (List<Book>)session.getAttribute("list");
+		for (Book p : list) {
 			if (p.getId() == id) {
 				Item i = new Item();
 				i.setProduct(p);

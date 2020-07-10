@@ -7,9 +7,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import bean.Item;
-import dao.PurchaseDAO;
+import dao.RentalDAO;
 
-public class PurchaseAction extends Action {
+public class RentalAction extends Action {
 
 	@SuppressWarnings("unchecked")
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -21,7 +21,7 @@ public class PurchaseAction extends Action {
 			return "purchase-error-empty.jsp";
 		}
 
-		PurchaseDAO dao = new PurchaseDAO();
+		RentalDAO dao = new RentalDAO();
 		List<Item> cart = (List<Item>)session.getAttribute("cart");
 		if (cart == null || !dao.insert(cart, name, address)) {
 			return "purchase-error-insert.jsp";

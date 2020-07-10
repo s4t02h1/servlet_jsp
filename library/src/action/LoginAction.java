@@ -4,8 +4,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import bean.Customer;
-import dao.CustomerDAO;;
+import bean.LibraryUser;
+import dao.LibraryUserDAO;;
 
 public class LoginAction extends Action {
 	public String execute(
@@ -16,11 +16,11 @@ public class LoginAction extends Action {
 		String login = request.getParameter("login");
 		String password = request.getParameter("password");
 		String error = request.getParameter("error");
-		CustomerDAO dao = new CustomerDAO();
-		Customer customer = dao.search(login, password);
+		LibraryUserDAO dao = new LibraryUserDAO();
+		LibraryUser libraryUser = dao.search(login, password);
 
-		if (customer != null) {
-			session.setAttribute("customer", customer);
+		if (libraryUser != null) {
+			session.setAttribute("customer", libraryUser);
 			return "login-out.jsp";
 		}
 			session.setAttribute("error", error);

@@ -5,9 +5,9 @@ import java.sql.PreparedStatement;
 import java.util.List;
 
 import bean.Item;
-import bean.Product;
+import bean.Book;
 
-public class PurchaseDAO extends DAO {
+public class RentalDAO extends DAO {
 	public boolean insert(
 			List<Item> cart, String name, String address
 		) throws Exception {
@@ -17,7 +17,7 @@ public class PurchaseDAO extends DAO {
 		for (Item item : cart) {
 			PreparedStatement st = con.prepareStatement(
 					"insert into purchase(product_id, product_name, product_price, product_count, customer_name, customer_address) values(?, ?, ?, ?, ?, ?)");
-			Product p = item.getProduct();
+			Book p = item.getProduct();
 			st.setInt(1, p.getId());
 			st.setString(2, p.getName());
 			st.setInt(3, p.getPrice());

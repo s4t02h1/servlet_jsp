@@ -1,13 +1,13 @@
 package bean;
 
-public class Customer implements java.io.Serializable {
+public class LibraryUser implements java.io.Serializable {
 
-	private int id;
+	private int user_id;
 	private String login;
 	private String password;
 
 	public int getId() {
-		return id;
+		return user_id;
 	}
 
 	public String getLogin() {
@@ -19,7 +19,7 @@ public class Customer implements java.io.Serializable {
 	}
 
 	public void setId(int id) {
-		this.id = id;
+		this.user_id = id;
 	}
 
 	public void setLogin(String login) {

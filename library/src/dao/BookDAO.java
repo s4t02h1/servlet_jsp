@@ -6,13 +6,13 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import bean.Product;
+import bean.Book;
 
 
-public class ProductDAO extends DAO {
+public class BookDAO extends DAO {
 
-	public List<Product> search(String keyword) throws Exception {
-		List<Product> list = new ArrayList<>();
+	public List<Book> search(String keyword) throws Exception {
+		List<Book> list = new ArrayList<>();
 
 
 	try(Connection con = getConnection();
@@ -21,7 +21,7 @@ public class ProductDAO extends DAO {
 		ResultSet rs = st.executeQuery();
 
 		while (rs.next()) {
-			Product p = new Product();
+			Book p = new Book();
 			p.setId(rs.getInt("id"));
 			p.setName(rs.getString("name"));
 			p.setPrice(rs.getInt("price"));
@@ -34,13 +34,13 @@ public class ProductDAO extends DAO {
 		return list;}
 	}
 
-	public int insert(Product product) throws Exception {
+	public int insert(Book book) throws Exception {
 
 	try(Connection con = getConnection();
 
 		PreparedStatement st = con.prepareStatement("insert into product(name, price) values(?,?);");){
-		st.setString(1, product.getName());
-		st.setInt(2, product.getPrice());
+		st.setString(1, book.getName());
+		st.setInt(2, book.getPrice());
 		int line = st.executeUpdate();
 
 		return line;}

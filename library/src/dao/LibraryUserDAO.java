@@ -4,12 +4,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import bean.Customer;
+import bean.LibraryUser;
 
-public class CustomerDAO extends DAO {
-	public Customer search(String login, String password)
+public class LibraryUserDAO extends DAO {
+	public LibraryUser search(String login, String password)
 		throws Exception {
-		Customer customer = null;
+		LibraryUser libraryUser = null;
 
 		Connection con = getConnection();
 
@@ -21,14 +21,14 @@ public class CustomerDAO extends DAO {
 		ResultSet rs = st.executeQuery();
 
 		while (rs.next()) {
-			customer = new Customer();
-			customer.setId(rs.getInt("id"));
-			customer.setLogin(rs.getString("login"));
-			customer.setPassword(rs.getString("password"));
+			libraryUser = new LibraryUser();
+			libraryUser.setId(rs.getInt("id"));
+			libraryUser.setLogin(rs.getString("login"));
+			libraryUser.setPassword(rs.getString("password"));
 		}
 		st.close();
 		con.close();
-		return customer;
+		return libraryUser;
 	}
 
 }

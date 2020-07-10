@@ -8,7 +8,7 @@ import javax.servlet.http.HttpSession;
 
 import bean.Item;
 
-public class CartRemoveAction extends Action {
+public class RegisterRemoveAction extends Action {
 
 	@SuppressWarnings("unchecked")
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
