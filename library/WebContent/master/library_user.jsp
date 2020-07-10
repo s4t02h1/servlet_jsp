@@ -13,7 +13,7 @@
 <meta http-equiv="expires" content="0" />
 
 <!-- タイトル -->
-<title>システム(仮)</title>
+<title>図書館書籍検索システム</title>
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="../common/system_files/bootstrap.min.css" />
@@ -40,7 +40,7 @@
 		<div class="container">
 			<div id="header" style="border-bottom: 1px solid #eee;" class="col-xs-12 col-sm-12 col-md-12">
 				<div id="logo">
-					<h1>システム(仮)</h1>
+					<h1>図書館書籍検索システム</h1>
 				</div>
 				<div class="dropdown col-sm-2" style="position: absolute; bottom: 10px; right: 0; text-align: right; vertical-align: bottom;">
 					<a href="#" data-toggle="dropdown" role="button" aria-expanded="false">てすと太郎<span class="caret"></span></a>
